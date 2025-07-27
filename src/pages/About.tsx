@@ -20,6 +20,7 @@ import {
   Flame
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import ParallaxZoomGallery from "@/components/ParallaxZoomGallery";
 
 const MotionCard = motion(Card);
 
@@ -313,6 +314,7 @@ const About = () => {
           </motion.div>
         </div>
       </section>
+      <ParallaxZoomGallery/>
 
       {/* Project Domains Section */}
       <section className="py-20 overflow-hidden">
@@ -354,81 +356,65 @@ const About = () => {
       </section>
 
       {/* Key Team Members Section */}
-      <section className="py-20 bg-muted/40 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <h2 className="text-4xl font-bold text-center text-foreground mb-16">
-              <span className="relative inline-block">
-                Our Key Team Members
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-primary transform origin-left"></span>
-              </span>
-            </h2>
-          </AnimatedSection>
-          
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-5 gap-6"
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-          >
-            {teamMembers.map((member, index) => (
-              <motion.div key={index} variants={fadeInUp}>
-                <div className="bg-background rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full group">
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={member.photo} 
-                      alt={member.name} 
-                      className="w-full h-48 object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                      <div className="p-4">
-                        <p className="text-white font-medium">{member.role}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-primary font-bold mb-1 group-hover:translate-x-1 transition-transform duration-300">{member.name}</h3>
-                    <p className="text-sm text-muted-foreground">{member.qualification}</p>
-                    {member.experience && (
-                      <p className="text-xs text-muted-foreground mt-2">
-                        <span className="inline-flex items-center">
-                          <Clock className="h-3 w-3 mr-1" /> 
-                          {member.experience} experience
-                        </span>
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-          
-          <AnimatedSection delay={0.3}>
-            <div className="mt-12 text-center max-w-2xl mx-auto">
-              <div className="glass-card p-6 rounded-xl">
-                <p className="text-lg text-foreground">
-                  Additionally, our team includes:
-                </p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4">
-                  {[
-                    "Draft Assistants", 
-                    "Draftsmen", 
-                    "Site Supervisors", 
-                    "Foremen", 
-                    "Fitters", 
-                    "Alarm Technicians"
-                  ].map((role, index) => (
-                    <div key={index} className="flex items-center p-2">
-                      <ChevronRight className="h-4 w-4 text-primary mr-2" />
-                      <span className="text-sm">{role}</span>
-                    </div>
-                  ))}
-                </div>
+<section className="py-20 bg-muted/40 overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <AnimatedSection>
+      <h2 className="text-4xl font-bold text-center text-foreground mb-16">
+        <span className="relative inline-block">
+          Our Key Team Members
+          <span className="absolute bottom-0 left-0 w-full h-1 bg-primary transform origin-left"></span>
+        </span>
+      </h2>
+    </AnimatedSection>
+
+    <motion.div
+      className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+      variants={staggerContainer}
+      initial="hidden"
+      animate="visible"
+    >
+      {teamMembers.map((member, index) => (
+        <motion.div key={index} variants={fadeInUp}>
+          <div className="bg-background rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-[0_0_25px_2px_theme(colors.primary.DEFAULT)]">
+            <h3 className="text-xl font-semibold text-primary mb-1">{member.name}</h3>
+            <p className="text-sm text-muted-foreground mb-1">{member.role}</p>
+            <p className="text-sm text-muted-foreground">{member.qualification}</p>
+            {member.experience && (
+              <p className="text-xs text-muted-foreground mt-2 flex items-center">
+                <Clock className="h-3 w-3 mr-1" />
+                {member.experience} experience
+              </p>
+            )}
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+
+    <AnimatedSection delay={0.3}>
+      <div className="mt-12 text-center max-w-2xl mx-auto">
+        <div className="glass-card p-6 rounded-xl">
+          <p className="text-lg text-foreground">Additionally, our team includes:</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4">
+            {[
+              "Draft Assistants",
+              "Draftsmen",
+              "Site Supervisors",
+              "Foremen",
+              "Fitters",
+              "Alarm Technicians"
+            ].map((role, index) => (
+              <div key={index} className="flex items-center p-2">
+                <ChevronRight className="h-4 w-4 text-primary mr-2" />
+                <span className="text-sm">{role}</span>
               </div>
-            </div>
-          </AnimatedSection>
+            ))}
+          </div>
         </div>
-      </section>
+      </div>
+    </AnimatedSection>
+  </div>
+</section>
+
 
       {/* Certifications Section */}
       <section className="py-20 overflow-hidden">
