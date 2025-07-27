@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import PhoneButton from "@/components/PhoneButton";
 import { Button } from "@/components/ui/button";
+import ParallaxZoomGallery from "@/components/ParallaxZoomGallery";
 
 const galleryItems = [
   {
@@ -106,6 +107,7 @@ export default function Gallery() {
           </div>
         </div>
       </section>
+      <ParallaxZoomGallery/>
       
       {/* Gallery grid */}
       <section className="py-20 bg-background">
