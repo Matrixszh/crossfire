@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import PhoneButton from "@/components/PhoneButton";
 import { Button } from "@/components/ui/button";
 import ParallaxZoomGallery from "@/components/ParallaxZoomGallery";
+import { Link } from "react-router-dom";
 
 const galleryItems = [
   {
@@ -155,9 +156,11 @@ export default function Gallery() {
             <p className="text-lg mb-8 text-foreground/80">
               Our team of experts can design and implement tailored fire safety systems for your specific requirements
             </p>
+            <Link to="/contact">
             <Button className="px-8 py-6 text-lg shadow-glow">
               Request a Consultation
             </Button>
+            </Link>
           </motion.div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 const ClientCarousel = () => {
   const clients = [
-    "Crossfire", "InnovateMax", "FutureVision", "DigitalPro", "NextGen Solutions",
-    "SmartBusiness", "CloudTech", "DataDrive", "WebMasters", "CodeCraft"
+    "D. E. Shaw & Co.", "University of Hyderabad", "Amrutha Castle", "DigitalPro", "NextGen Hotel Grand Plaza",
+    "SARATH City Capital", "Shreya Hospital", "Mohini Restaurant", "Regency Towers", "MESCO Educational Complex"
   ];
 
   return (

@@ -19,6 +19,7 @@ import {
   BadgeCheck,
   Flame
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const MotionCard = motion(Card);
 
@@ -192,7 +193,7 @@ const About = () => {
           >
             Fire Protection Engineers & Consultants
           </motion.p>
-          
+          <Link to="/services">
           <motion.div 
             className="mt-10"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -204,6 +205,7 @@ const About = () => {
               <ChevronRight className="ml-2 h-4 w-4" />
             </div>
           </motion.div>
+          </Link>
         </div>
       </section>
 
@@ -510,9 +512,11 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
+                <Link to="/contact">
                 <button className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
                   Contact Us Today
                 </button>
+                </Link>
               </motion.div>
             </div>
           </AnimatedSection>
